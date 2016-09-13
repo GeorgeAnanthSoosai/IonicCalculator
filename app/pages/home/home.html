@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      APP List
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="list-avatar-page">
+  <ion-list *ngFor="let app of appCollectionList">
+    <ion-list-header>{{app.appHeader}}</ion-list-header>
+    <ion-item *ngFor="let appItem of app.appItem" (click)="navAppPage(appItem)">
+      <ion-avatar item-left>
+        <img [src]="appItem.appIcon">
+      </ion-avatar>
+      <h2>{{appItem.appHeading}}</h2>
+      <p>{{appItem.appDescription}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

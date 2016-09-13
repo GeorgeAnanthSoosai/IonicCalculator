@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Calculator
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col width-100>
+        <ion-item>
+          <ion-label stacked>Results</ion-label>
+          <ion-input style="direction:RTL" [(ngModel)]="calcResults"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngFor="let calcItem of calcItemList">
+      <ion-col width-25 (click)="setupTypedKey(calcItem.rowItem01)">
+        <button dark round full>{{calcItem.rowItem01.value}}</button>
+      </ion-col>
+      <ion-col width-25 (click)="setupTypedKey(calcItem.rowItem02)">
+        <button dark round full>{{calcItem.rowItem02.value}}</button>
+      </ion-col>
+      <ion-col width-25 (click)="setupTypedKey(calcItem.rowItem03)">
+        <button dark round full>{{calcItem.rowItem03.value}}</button>
+      </ion-col>
+      <ion-col width-25 (click)="setupTypedKey(calcItem.rowItem04)">
+        <button dark round full>{{calcItem.rowItem04.value}}</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
