@@ -6,29 +6,28 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="calculator-style">
   <ion-grid>
     <ion-row>
-      <ion-col width-100>
-        <ion-item>
-          <ion-label stacked>Results</ion-label>
-          <ion-input style="direction:RTL" [(ngModel)]="calcResults"></ion-input>
+      <ion-col width-100 class="pading-grid-col">
+        <ion-item class="display-item-design">
+          <ion-label stacked text-right class="display-text-align">{{calcResults}}</ion-label>
         </ion-item>
       </ion-col>
     </ion-row>
 
     <ion-row *ngFor="let calcItem of calcItemList">
-      <ion-col width-25 (click)="setupTypedKey(calcItem.rowItem01)">
-        <button dark round full>{{calcItem.rowItem01.value}}</button>
+      <ion-col width-25 (click)="setupTypedKey(calcItem.rowItem01)" class="pading-grid-col">
+        <button [ngClass]="calcItem.rowItem01.btnClass" full >{{calcItem.rowItem01.value}}</button>
       </ion-col>
-      <ion-col width-25 (click)="setupTypedKey(calcItem.rowItem02)">
-        <button dark round full>{{calcItem.rowItem02.value}}</button>
+      <ion-col width-25 (click)="setupTypedKey(calcItem.rowItem02)" class="pading-grid-col">
+        <button [ngClass]="calcItem.rowItem02.btnClass" full>{{calcItem.rowItem02.value}}</button>
       </ion-col>
-      <ion-col width-25 (click)="setupTypedKey(calcItem.rowItem03)">
-        <button dark round full>{{calcItem.rowItem03.value}}</button>
+      <ion-col width-25 (click)="setupTypedKey(calcItem.rowItem03)" class="pading-grid-col">
+        <button [ngClass]="calcItem.rowItem03.btnClass" full>{{calcItem.rowItem03.value}}</button>
       </ion-col>
-      <ion-col width-25 (click)="setupTypedKey(calcItem.rowItem04)">
-        <button dark round full>{{calcItem.rowItem04.value}}</button>
+      <ion-col width-25 (click)="setupTypedKey(calcItem.rowItem04)" class="pading-grid-col">
+        <button [ngClass]="calcItem.rowItem04.btnClass" full>{{calcItem.rowItem04.value}}</button>
       </ion-col>
     </ion-row>
   </ion-grid>

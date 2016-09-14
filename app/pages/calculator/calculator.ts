@@ -3,7 +3,8 @@ import { NavController } from 'ionic-angular';
 
 interface Item {
   value : string,
-  type : string
+  type : string,
+  btnClass : any
 }
 interface calcRowList {
   rowItem01 : Item,
@@ -23,30 +24,30 @@ export class Calculator {
   constructor(public navCtrl: NavController) {
     this.calcItemList = [
       {
-        rowItem01 : {value : "(", type : "group"},
-        rowItem02 : {value : ")", type : "group"},
-        rowItem03 : {value : "%", type : "math"},
-        rowItem04 : {value : "AC", type : "clear"}
+        rowItem01 : {value : "(", type : "group", btnClass : ["button-secondary", "button-round-custom", "pading-grid-col"]},
+        rowItem02 : {value : ")", type : "group", btnClass : ["button-secondary", "button-round-custom", "pading-grid-col"]},
+        rowItem03 : {value : "%", type : "math", btnClass : ["button-secondary", "button-round-custom", "pading-grid-col"]},
+        rowItem04 : {value : "AC", type : "clear", btnClass : ["button-secondary", "button-round-custom", "pading-grid-col"]}
       }, {
-        rowItem01 : {value : "7", type : "number"},
-        rowItem02 : {value : "8", type : "number"},
-        rowItem03 : {value : "9", type : "number"},
-        rowItem04 : {value : "/", type : "math"}
+        rowItem01 : {value : "7", type : "number", btnClass : ["button-dark", "button-round-custom", "pading-grid-col"]},
+        rowItem02 : {value : "8", type : "number", btnClass : ["button-dark", "button-round-custom", "pading-grid-col"]},
+        rowItem03 : {value : "9", type : "number", btnClass : ["button-dark", "button-round-custom", "pading-grid-col"]},
+        rowItem04 : {value : "/", type : "math", btnClass : ["button-secondary", "button-round-custom", "pading-grid-col"]}
       }, {
-        rowItem01 : {value : "4", type : "number"},
-        rowItem02 : {value : "5", type : "number"},
-        rowItem03 : {value : "6", type : "number"},
-        rowItem04 : {value : "*", type : "math"}
+        rowItem01 : {value : "4", type : "number", btnClass : ["button-dark", "button-round-custom", "pading-grid-col"]},
+        rowItem03 : {value : "6", type : "number", btnClass : ["button-dark", "button-round-custom", "pading-grid-col"]},
+        rowItem02 : {value : "5", type : "number", btnClass : ["button-dark", "button-round-custom", "pading-grid-col"]},
+        rowItem04 : {value : "*", type : "math", btnClass : ["button-secondary", "button-round-custom", "pading-grid-col"]}
       }, {
-        rowItem01 : {value : "1", type : "number"},
-        rowItem02 : {value : "2", type : "number"},
-        rowItem03 : {value : "3", type : "number"},
-        rowItem04 : {value : "-", type : "math"}
+        rowItem01 : {value : "1", type : "number", btnClass : ["button-dark", "button-round-custom", "pading-grid-col"]},
+        rowItem02 : {value : "2", type : "number", btnClass : ["button-dark", "button-round-custom", "pading-grid-col"]},
+        rowItem03 : {value : "3", type : "number", btnClass : ["button-dark", "button-round-custom", "pading-grid-col"]},
+        rowItem04 : {value : "-", type : "math", btnClass : ["button-secondary", "button-round-custom", "pading-grid-col"]}
       }, {
-        rowItem01 : {value : "0", type : "number"},
-        rowItem02 : {value : ".", type : "number"},
-        rowItem03 : {value : "=", type : "total"},
-        rowItem04 : {value : "+", type : "math"}
+        rowItem01 : {value : "0", type : "number", btnClass : ["button-dark", "button-round-custom", "pading-grid-col"]},
+        rowItem02 : {value : ".", type : "number", btnClass : ["button-secondary", "button-round-custom", "pading-grid-col"]},
+        rowItem03 : {value : "=", type : "total", btnClass : ["button-secondary", "button-round-custom", "pading-grid-col"]},
+        rowItem04 : {value : "+", type : "math", btnClass : ["button-secondary", "button-round-custom", "pading-grid-col"]}
       }
     ]
     this.calcResults = 0;
