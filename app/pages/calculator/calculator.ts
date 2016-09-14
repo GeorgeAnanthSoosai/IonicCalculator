@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { FormatCalcResult } from '../../filter/filterCalculatorResults'
 
 interface Item {
   value : string,
@@ -14,7 +15,8 @@ interface calcRowList {
 }
 
 @Component({
-  templateUrl: 'build/pages/calculator/calculator.html'
+  templateUrl: 'build/pages/calculator/calculator.html',
+  pipes: [FormatCalcResult]
 })
 export class Calculator {
   calcItemList : calcRowList[];
@@ -71,9 +73,12 @@ export class Calculator {
       this.calcResults = "0";
     }
     if(selectedItem.type == "total") {
+      var results = "0";
       if(this.previousItem && this.previousItem.value) {
-        this.calcResults = eval(parseFloat(this.calcResults) + this.previousItem.operator + parseFloat(this.previousItem.value));
+        results = eval(parseFloat(this.calcResults) + this.previousItem.operator + parseFloat(this.previousItem.value));
       }
+      this.previousItem = {};
+      this.calcResults = results;
     }
     if(selectedItem.type == "clear") {
       this.calcResults = "0";
